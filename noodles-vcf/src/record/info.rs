@@ -10,7 +10,10 @@ use crate::{variant::record::info::field::Value, Header};
 pub struct Info<'r>(&'r str);
 
 impl<'r> Info<'r> {
-    pub(super) fn new(buf: &'r str) -> Self {
+    /// TODO: Find a better solution than making this public.
+    /// Instead, add a function that does what we need explicitly:
+    /// Create a `noodles_vcf::variant::record_buf::Info` from an `&str`.
+    pub fn new(buf: &'r str) -> Self {
         Self(buf)
     }
 
